@@ -21,52 +21,22 @@
       margin: 0 auto;
     }
 
-    /* Nagłówek inspirowany grafiką */
+    /* Żółta ramka idealnie dopasowana do grafiki */
     .header-container {
-      text-align: center;
       margin-bottom: 40px;
       background: #050a07;
-      padding: 30px;
       border-radius: 20px;
       border: 2px solid #ffd23f; /* Ogniste złoto */
       box-shadow: 0 0 20px rgba(255, 210, 63, 0.1);
+      overflow: hidden; /* Sprawia, że rogi obrazka zaokrąglają się razem z ramką */
+      display: flex;
     }
 
-    /* STYL DLA GRAFIKI */
+    /* Grafika wypełniająca całą ramkę */
     .header-logo {
       width: 100%;
-      max-width: 320px; /* Maksymalna szerokość obrazka na stronie */
       height: auto;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(255, 82, 163, 0.2); /* Delikatna różowa poświata wokół */
-    }
-
-    .welcome-text {
-      font-family: 'Courier New', monospace;
-      font-size: 14px;
-      letter-spacing: 0.3em;
-      color: #ff52a3; /* Neonowy róż z czaszek */
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 5px;
-    }
-
-    h1 span {
-      color: #2ed974; /* Zieleń z "Play Polish" */
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: #8fa399;
-      font-style: italic;
+      display: block;
     }
 
     /* Menu Wyboru (Przyciski aktywujące) */
@@ -186,21 +156,15 @@
       .menu-buttons {
         grid-template-columns: 1fr;
       }
-      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- Nagłówek wizualny z grafiką -->
+    <!-- Żółta ramka wypełniona wyłącznie grafiką -->
     <div class="header-container">
-      <!-- Wywołanie Twojego obrazka ze zrzutu ekranu Screenshot_20260613_153516_com_dadbot9000_mort404_MainActivity.jpg -->
-      <img src="logo.jpg" alt="Mort404 Logo" class="header-logo">
-      
-      <div class="welcome-text">WELCOME BACK ✦</div>
-      <h1>Play <span>Polish</span></h1>
-      <div class="subtitle">strange but useful</div>
+      <img src="logo.jpg" alt="Mort404" class="header-logo">
     </div>
 
     <!-- Przełączniki sekcji -->
@@ -285,19 +249,15 @@
   <!-- Skrypt do przełączania zakładek -->
   <script>
     function openSection(sectionId) {
-      // Ukryj wszystkie sekcje
       const sections = document.querySelectorAll('.content-section');
       sections.forEach(section => section.classList.remove('active'));
 
-      // Dezaktywuj wszystkie przyciski
       const buttons = document.querySelectorAll('.tab-btn');
       buttons.forEach(button => button.classList.remove('active'));
 
-      // Pokaż wybraną sekcję i aktywuj przycisk
       document.getElementById(sectionId).classList.add('active');
       event.currentTarget.classList.add('active');
     }
   </script>
 </body>
-  
 </html>
